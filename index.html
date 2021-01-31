@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            clear: both;
+        }
+
+        body {
+            box-sizing: border-box;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            margin: auto;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #13112D;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+            display: block;
+        }
+
+        .centered {
+            max-height: 55vh;
+            max-width: 70vw;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+            align-items: center;
+            will-change: transform;
+        }
+
+        #paper {
+            background: url('assets/paper.jpg');
+            mix-blend-mode: exclusion;
+            z-index: 1;
+            background-size: cover;
+            opacity: 50%;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+        }
+
+        #logo {}
+
+        #characters {
+            max-width: 61.5%;
+        }
+
+        #charactersMobile {
+            display: none;
+            max-width: 50%;
+        }
+
+        @media (max-width:600px) {
+            #characters {
+                display: none;
+            }
+
+            #charactersMobile {
+                display: block;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <div class="centered"><img id="characters" src='assets/shogun.svg'><img id="charactersMobile" src='assets/shogun%20vert.svg'></div>
+        <div class="centered"><img id="logo" src='assets/szogun.svg'></div>
+        <div id="paper"></div>
+    </section>
+</body></html>
