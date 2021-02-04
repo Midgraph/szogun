@@ -12,12 +12,12 @@
 
 
     <!-- Facebook / OpenGraph -->
-    <meta property="og:url"                 content="http://www.szogun.co" />
-    <meta property="og:title"               content="SZOGUN" />
-    <meta property="og:description"         content="Coming Soon" />
-    <meta property="og:site_name"           content="SZOGUN" />
-    <meta property="og:type"                content="website" /> <!-- website is deafult -->
-    <meta property="og:locale"              content="en_US" />   <!-- en_US is deafult -->
+    <meta property="og:url" content="http://www.szogun.co" />
+    <meta property="og:title" content="SZOGUN" />
+    <meta property="og:description" content="Coming Soon" />
+    <meta property="og:site_name" content="SZOGUN" />
+    <meta property="og:type" content="website" /> <!-- website is deafult -->
+    <meta property="og:locale" content="en_US" /> <!-- en_US is deafult -->
 
 
     <style>
@@ -80,6 +80,11 @@
             height: 100%;
             background-position: center;
             /*            filter: blur(0.5px)*/
+
+        }
+
+        .overlay {
+            pointer-events: none;
         }
 
         #grain {
@@ -120,14 +125,48 @@
             right: 0;
             bottom: 0;
             height: auto;
-            width:auto;
+            width: auto;
             min-width: 100%;
             min-height: 100%;
-            opacity:1;
+            opacity: 1;
+        }
+
+        footer {
+            position: fixed;
+            color: #FFF;
+            text-align: right;
+            bottom: 2em;
+            left: 50%;
+            top: unset;
+            transform: translate(-50%, -50%);
+            font-family: 'Open Sans';
+            font-weight: 900;
+            font-size: 0.8em;
+            letter-spacing: 0.1em;
+            max-width: 80vw;
+            width: 100%;
+            text-transform: uppercase;
+            z-index: 1000;
+            opacity: 0.8;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+        }
+
+        footer a {
+            font-weight: 900;
+            color: #FFF;
+            border-bottom: 0 solid #FF1010;
+/*            transition: all 0.2s linear;*/
+        }
+
+        footer a:hover{
+            border-bottom: 4px solid #FF1010;
         }
 
         @media (max-width:600px) {
-/*
+            /*
             #characters {
                 display: none;
             }
@@ -205,12 +244,12 @@
     <!-- For IE 10 and below: No link, just place a file called favicon.ico in the root directory -->
     <!-- For IE 11, Chrome, Firefox, Safari, Opera -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <!--[if lt IE 9]>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -221,15 +260,25 @@
 
 <body>
     <section id="container">
-        <video autoplay muted loop id="vhs">
+        <video autoplay muted loop id="vhs" class="overlay">
             <source src="assets/vhs_dust.mp4" type="video/mp4">
         </video>
-        <div class="centered"><img id="logo" src='assets/szogun.svg'></div>
+        <div class="centered "><img id="logo" src='assets/szogun.svg'></div>
         <div class="centered"><img id="characters" src='assets/catana.png'></div>
-        <div id="paper"></div>
+        <div id="paper" class="overlay"></div>
         <div class=""><img id="charactersMobile" src='assets/catana.png'></div>
-        <div id="grain"></div>
+        <div id="grain" class="overlay"></div>
+        <footer class="footer">
+            <div class="footer__top">
+                <a href="mailto: psst@szogun.co" style="text-decoration: none;">psst@szogun.co</a>
+            </div>
+            <div class="footer__btm">
+                <div>©Copyright 2021 SZOGUN Co</div>
+                <div>All rights reserved</div>
+            </div>
+        </footer>
     </section>
+
 </body>
 
 </html>
