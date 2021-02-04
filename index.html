@@ -79,9 +79,9 @@
             opacity: 50%;
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
             background-position: center;
-            /*            filter: blur(0.5px)*/
-
         }
 
         .overlay {
@@ -112,11 +112,6 @@
             height: auto;
             filter: blur(0px);
             z-index: 3;
-        }
-
-        #charactersMobile {
-            display: none;
-            max-width: 50%;
         }
 
         #vhs {
@@ -166,18 +161,56 @@
             border-bottom: 4px solid #FF1010;
         }
 
+        .mobile {
+            display: none;
+
+        }
+
+        .mobile img {
+            max-width: 80vw !important;
+        }
+
         @media (max-width:600px) {
-            /*
-            #characters {
+
+            .desktop {
                 display: none;
             }
-*/
 
-            #charactersMobile {
-                display: block;
+             #logo {
+            filter: blur(0)
+        }
 
+            .mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+            }
+
+            footer {
+                position: relative;
+                transform: none;
+                top: auto;
+                left: auto;
+                padding: 20px 0;
+                flex-direction: column;
+                text-align: right;
+            }
+
+            footer>div:first-of-type {
+                margin-bottom: 0.5em;
+            }
+
+            #container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
             }
         }
+
+
 
 
         #grain:after {
@@ -260,15 +293,24 @@
 </head>
 
 <body>
-    <section id="container">
+    <section id="container" class="desktop">
         <video autoplay muted loop id="vhs" class="overlay">
             <source src="assets/vhs_dust.mp4" type="video/mp4">
         </video>
-        <div class="centered "><img id="logo" alt="SZOGUN" src='assets/szogun.svg'></div>
-        <div class="centered"><img id="characters" alt="Badass Cat" src='assets/catana.png'></div>
+
+        <div class="desktop">
+            <div class="centered "><img id="logo" alt="SZOGUN" src='assets/szogun.svg'></div>
+            <div class="centered"><img id="characters" alt="Badass Cat" src='assets/catana.png'></div>
+        </div>
+
+        <div class="mobile">
+            <img id="characters" alt="Badass Cat" src='assets/catana.png'>
+            <img id="logo" alt="SZOGUN" src='assets/szogun.svg'>
+        </div>
+
         <div id="paper" class="overlay"></div>
-        <div class=""><img id="charactersMobile" src='assets/catana.png'></div>
         <div id="grain" class="overlay"></div>
+
         <footer class="footer">
             <div class="footer__top">
                 <a href="mailto: psst@szogun.co" style="text-decoration: none;">psst@szogun.co</a>
@@ -279,6 +321,7 @@
             </div>
         </footer>
     </section>
+
 
 </body>
 
