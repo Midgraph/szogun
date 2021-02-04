@@ -18,7 +18,8 @@
     <meta property="og:site_name" content="SZOGUN" />
     <meta property="og:type" content="website" /> <!-- website is deafult -->
     <meta property="og:locale" content="en_US" /> <!-- en_US is deafult -->
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -139,8 +140,8 @@
             left: 50%;
             top: unset;
             transform: translate(-50%, -50%);
-            font-family: 'Open Sans';
-            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
             font-size: 0.8em;
             letter-spacing: 0.1em;
             max-width: 80vw;
@@ -155,13 +156,13 @@
         }
 
         footer a {
-            font-weight: 900;
+            font-weight: 800;
             color: #FFF;
             border-bottom: 0 solid #FF1010;
-/*            transition: all 0.2s linear;*/
+            /*            transition: all 0.2s linear;*/
         }
 
-        footer a:hover{
+        footer a:hover {
             border-bottom: 4px solid #FF1010;
         }
 
@@ -263,8 +264,8 @@
         <video autoplay muted loop id="vhs" class="overlay">
             <source src="assets/vhs_dust.mp4" type="video/mp4">
         </video>
-        <div class="centered "><img id="logo" src='assets/szogun.svg'></div>
-        <div class="centered"><img id="characters" src='assets/catana.png'></div>
+        <div class="centered "><img id="logo" alt="SZOGUN" src='assets/szogun.svg'></div>
+        <div class="centered"><img id="characters" alt="Badass Cat" src='assets/catana.png'></div>
         <div id="paper" class="overlay"></div>
         <div class=""><img id="charactersMobile" src='assets/catana.png'></div>
         <div id="grain" class="overlay"></div>
